@@ -1,0 +1,155 @@
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#fff',
+      'primaryTextColor': '#000',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#000',
+      'secondaryColor': '#006100',
+      'tertiaryColor': '#fff',
+      'clusterBkg': '#894462'
+    },
+    "flowchart" : { "curve" : "basis" }
+  }
+}%%
+
+graph LR;
+  direction LR
+  subgraph Semester1
+    direction LR
+    CIC0188["Introdução à Eng de Computação"]
+    IFD0171["Física 1"]
+    IFD0173["Física 1 Experimental"]
+    MAT0025["Cálculo 1"]
+    MAT0031["Introdução à Álgebra Linear"]
+    CIC0004["Algoritmos e Progr de Computadores"]
+  end
+  
+  subgraph Semester2
+    direction LR
+    CIC0090["Estruturas de Dados"]
+    EST0023["Probabilidade e Estatística"]
+    IFD0175["Física 2"]
+    IFD0177["Física 2 Experimental"]
+    MAT0026["Cálculo 2"]
+    
+    CIC0004 ====> CIC0090
+    MAT0025 ====> EST0023
+    IFD0171 ====> IFD0175
+    IFD0173 ====> IFD0177
+    MAT0025 ====> IFD0175
+  end
+  
+  subgraph Semester3
+    direction LR
+    CIC0234["Métodos de Programação"]
+    ENE0067["Sinais e Sistemas em Tempo Contínuo"]
+    MAT0027["Cálculo 3"]
+    
+    CIC0090 ====> CIC0234
+    MAT0026 ====> ENE0067
+    MAT0031 ====> ENE0067
+    MAT0026 ====> MAT0027
+  end
+  
+  subgraph Semester4
+    direction LR
+    ENE0177["Eletromagnetismo 1"]
+    MAT0053["Cálculo Numérico"]
+    CIC0197["Técnicas de Programação 1"]
+    ENE0039["Sistemas Digitais"]
+    ENE0040["Laboratório de Sistemas Digitais"]
+    
+    MAT0027 ====> ENE0177
+    MAT0026 ====> MAT0053
+    CIC0090 ====> CIC0197
+    CIC0004 ====> ENE0039
+    CIC0004 ====> ENE0040
+  end
+  
+  subgraph Semester5
+    direction LR
+    CIC0093["Linguagens de Programação"]
+    CIC0099["Organização e Arq de Computadores"]
+    ENE0066["Introdução aos Circuitos Elétricos"]
+    ENE0068["Sinais e Sistemas em Tempo Discreto"]
+    ENE0056["Sistemas Microprocessados"]
+    
+    CIC0090 ====> CIC0093
+    ENE0039 ====> CIC0099
+    ENE0040 ====> CIC0099
+    MAT0026 ====> ENE0066
+    MAT0031 ====> ENE0066
+    ENE0067 ====> ENE0068
+    ENE0039 ====> ENE0056
+    ENE0040 ====> ENE0056
+  end
+
+  subgraph Semester6
+    direction LR
+    CIC0104["Software Básico"]
+    CIC0090 ====> CIC0104
+    CIC0099 ====> CIC0104
+    CIC0105["Engenharia de Software"]
+    CIC0093 ====> CIC0105
+    CIC0097 ====> CIC0105
+    CIC0189["Projeto e Análise de Algoritmos"]
+    MAT0025 ====> CIC0189
+    CIC0090 ====> CIC0189
+    CIC0235["Teleinformática e Redes 1"]
+    MAT0026 ====> CIC0235
+    EST0023 ====> CIC0235
+    CIC0090 ====> CIC0235
+    ENE0304["Circuitos Elétricos"]
+    ENE0066 ====> ENE0304
+    ENE0067 ====> ENE0304
+    ENE0282["Laboratório de Circuitos Elétricos"]
+    ENE0066 ====> ENE0282
+    ENE0067 ====> ENE0282
+end
+
+subgraph Semester7
+  direction LR
+    CIC0108["Sistemas Operacionais"]
+    CIC0104 ====> CIC0108
+    CIC0236["Teleinformática e Redes 2"]
+    CIC0235 ====> CIC0236
+    ENE0045["Eletrônica"]
+    ENE0304 ====> ENE0045
+    ENE0282 ====> ENE0045
+    ENE0177 ====> ENE0045
+    ENE0046["Laboratório de Eletrônica"]
+    ENE0304 ====> ENE0046
+    ENE0282 ====> ENE0046
+    ENE0177 ====> ENE0046
+end
+
+subgraph Semester8
+  direction LR
+    CIC0265["Estágio Superv em Eng Computação 1"]
+end
+
+subgraph Semester9
+  direction LR
+    CIC0266["Estágio Superv em Eng Computação 2"]
+    CIC0265 ====> CIC0266
+    CIC0267["Projeto Final em Eng Computação 1"]
+end
+
+subgraph Semester10
+  direction LR
+    CIC0268["Projeto Final em Eng Computação 2"]
+    CIC0267 ====> CIC0268
+end
+
+Semester1 ~~~ Semester2
+Semester2 ~~~ Semester3
+Semester3 ~~~ Semester4
+Semester4 ~~~ Semester5
+Semester5 ~~~~~~~~ Semester6
+Semester6 ~~~ Semester7
+Semester7 ~~~ Semester8
+Semester8 ~~~ Semester9
+Semester9 ~~~ Semester10
+
