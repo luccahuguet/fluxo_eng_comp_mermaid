@@ -8,16 +8,15 @@
       'lineColor': '#000',
       'secondaryColor': '#006100',
       'tertiaryColor': '#fff',
-      'clusterBkg': '#894462'
+      'clusterBkg': 'aquamarine'
+
     },
     "flowchart" : { "curve" : "basis" }
   }
 }%%
 
 graph LR;
-  direction LR
   subgraph Semester1
-    direction LR
     CIC0188["Introdução à Eng de Computação"]
     IFD0171["Física 1"]
     IFD0173["Física 1 Experimental"]
@@ -27,7 +26,6 @@ graph LR;
   end
   
   subgraph Semester2
-    direction LR
     CIC0090["Estruturas de Dados"]
     EST0023["Probabilidade e Estatística"]
     IFD0175["Física 2"]
@@ -42,7 +40,6 @@ graph LR;
   end
   
   subgraph Semester3
-    direction LR
     CIC0234["Métodos de Programação"]
     ENE0067["Sinais e Sistemas em Tempo Contínuo"]
     MAT0027["Cálculo 3"]
@@ -54,7 +51,6 @@ graph LR;
   end
   
   subgraph Semester4
-    direction LR
     ENE0177["Eletromagnetismo 1"]
     MAT0053["Cálculo Numérico"]
     CIC0197["Técnicas de Programação 1"]
@@ -69,7 +65,6 @@ graph LR;
   end
   
   subgraph Semester5
-    direction LR
     CIC0093["Linguagens de Programação"]
     CIC0099["Organização e Arq de Computadores"]
     ENE0066["Introdução aos Circuitos Elétricos"]
@@ -87,13 +82,12 @@ graph LR;
   end
 
   subgraph Semester6
-    direction LR
     CIC0104["Software Básico"]
     CIC0090 ====> CIC0104
     CIC0099 ====> CIC0104
     CIC0105["Engenharia de Software"]
     CIC0093 ====> CIC0105
-    CIC0097 ====> CIC0105
+    CIC0197 ====> CIC0105
     CIC0189["Projeto e Análise de Algoritmos"]
     MAT0025 ====> CIC0189
     CIC0090 ====> CIC0189
@@ -110,7 +104,6 @@ graph LR;
 end
 
 subgraph Semester7
-  direction LR
     CIC0108["Sistemas Operacionais"]
     CIC0104 ====> CIC0108
     CIC0236["Teleinformática e Redes 2"]
@@ -126,19 +119,16 @@ subgraph Semester7
 end
 
 subgraph Semester8
-  direction LR
     CIC0265["Estágio Superv em Eng Computação 1"]
 end
 
 subgraph Semester9
-  direction LR
     CIC0266["Estágio Superv em Eng Computação 2"]
     CIC0265 ====> CIC0266
     CIC0267["Projeto Final em Eng Computação 1"]
 end
 
 subgraph Semester10
-  direction LR
     CIC0268["Projeto Final em Eng Computação 2"]
     CIC0267 ====> CIC0268
 end
@@ -153,3 +143,4 @@ Semester7 ~~~ Semester8
 Semester8 ~~~ Semester9
 Semester9 ~~~ Semester10
 
+style Semester1 fill:lightgreen,stroke:#F00,stroke-width:2px

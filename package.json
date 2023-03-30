@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "mermaid": "^10.0.2",
+    "npm": "^9.6.2",
     "puppeteer": "^19.7.5"
   }
 }
